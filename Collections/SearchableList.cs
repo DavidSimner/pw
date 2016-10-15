@@ -19,7 +19,8 @@ namespace pw.Collections
 
         internal int BinarySearch(T item)
         {
-            return _list.BinarySearch(item, _comparer);
+            var index = _list.BinarySearch(item, _comparer);
+            return index - 1;
         }
     }
 }

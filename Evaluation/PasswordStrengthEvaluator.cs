@@ -20,7 +20,7 @@ namespace pw.Evaluation
         {
             var probability = _model.CalculateProbability(password);
             var index = _a.BinarySearch(probability);
-            return _c[index - 1];
+            return _c[index];
         }
     }
 }
