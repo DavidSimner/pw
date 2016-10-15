@@ -5,7 +5,8 @@
   },
   "testRunner": "nunit",
   "dependencies": {
-    "dotnet-test-nunit": "3.4.0-beta-2"
+    "dotnet-test-nunit": "3.4.0-beta-2",
+    "NUnit": "3.4.0"
   },
   "frameworks": {
     "netcoreapp1.0": {
