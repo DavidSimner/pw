@@ -20,7 +20,14 @@ namespace pw.Collections
         internal int BinarySearch(T item)
         {
             var index = _list.BinarySearch(item, _comparer);
-            return index - 1;
+            for (--index; index >= 0; --index)
+            {
+                if (_comparer.Compare(_list[index], item) != 0)
+                {
+                    return index;
+                }
+            }
+            throw new System.NotSupportedException();
         }
     }
 }
