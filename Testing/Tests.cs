@@ -30,5 +30,23 @@ namespace pw.Testing
 
             return Math.Round(sut.Calculate(password), 15);
         }
+
+        [TestCase(A, ExpectedResult = 0)]
+        [TestCase(B, ExpectedResult = 0)]
+        [TestCase(C, ExpectedResult = 0)]
+        [TestCase(D, ExpectedResult = 5)]
+        public double Test2(string password)
+        {
+            var model = Substitute.For<IProbabilisticPasswordModel>();
+            model.GenerateSamplePassword().Returns(C);
+            model.CalculateProbability(A).Returns(0.4);
+            model.CalculateProbability(B).Returns(0.3);
+            model.CalculateProbability(C).Returns(0.2);
+            model.CalculateProbability(D).Returns(0.1);
+
+            var sut = PasswordStrengthEvaluatorFactory.Create(1, model);
+
+            return Math.Round(sut.Calculate(password), 15);
+        }
     }
 }
