@@ -14,6 +14,7 @@ namespace pw.Testing
 
         [TestCase(A, ExpectedResult = 0)]
         [TestCase(B, ExpectedResult = 1)]
+        [TestCase(C, ExpectedResult = 2)]
         [TestCase(D, ExpectedResult = 3)]
         public double Test(string password)
         {
