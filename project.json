@@ -3,6 +3,7 @@
   "buildOptions": {
     "debugType": "portable"
   },
+  "testRunner": "nunit",
   "dependencies": {},
   "frameworks": {
     "netcoreapp1.0": {
