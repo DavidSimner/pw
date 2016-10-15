@@ -23,8 +23,7 @@ namespace pw.Generation
             c.Add(0);
             for (var i = 1; i <= n; ++i)
             {
-                c.Add(1 / (n * a[i]));
-                c[i] += c[i - 1];
+                c.Add(c[i - 1] + 1 / (n * a[i]));
             }
 
             return new PasswordStrengthEvaluator(model, a, c);
