@@ -11,6 +11,8 @@ namespace pw.Collections
             _list = list;
         }
 
+        internal T this[int index] => _list[index];
+
         internal int BinarySearch(T item, IComparer<T> comparer)
         {
             return _list.BinarySearch(item, comparer);
