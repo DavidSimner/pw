@@ -7,9 +7,9 @@ namespace pw.Evaluation
     {
         private readonly IProbabilisticPasswordModel _model;
         private readonly SearchableList<double> _a;
-        private readonly List<double> _c;
+        private readonly IReadOnlyList<double> _c;
 
-        internal PasswordStrengthEvaluator(IProbabilisticPasswordModel model, SearchableList<double> a, List<double> c)
+        internal PasswordStrengthEvaluator(IProbabilisticPasswordModel model, SearchableList<double> a, IReadOnlyList<double> c)
         {
             _model = model;
             _a = a;
