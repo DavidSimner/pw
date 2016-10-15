@@ -12,6 +12,7 @@ namespace pw.Testing
         private const string C = "c";
         private const string D = "d";
 
+        [TestCase(A, ExpectedResult = 0)]
         [TestCase(D, ExpectedResult = 3)]
         public double Test(string password)
         {
