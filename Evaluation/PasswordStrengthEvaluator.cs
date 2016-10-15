@@ -6,10 +6,10 @@ namespace pw.Evaluation
     internal class PasswordStrengthEvaluator
     {
         private readonly IProbabilisticPasswordModel _model;
-        private readonly List<double> _a;
+        private readonly SearchableList<double> _a;
         private readonly List<double> _c;
 
-        internal PasswordStrengthEvaluator(IProbabilisticPasswordModel model, List<double> a, List<double> c)
+        internal PasswordStrengthEvaluator(IProbabilisticPasswordModel model, SearchableList<double> a, List<double> c)
         {
             _model = model;
             _a = a;

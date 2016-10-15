@@ -27,7 +27,7 @@ namespace pw.Generation
                 }
             }
 
-            return new PasswordStrengthEvaluator(model, a, c);
+            return new PasswordStrengthEvaluator(model, new SearchableList<double>(a), c);
         }
     }
 }
