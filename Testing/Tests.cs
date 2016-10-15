@@ -1,3 +1,4 @@
+using System;
 using NSubstitute;
 using NUnit.Framework;
 using pw.Generation;
@@ -27,7 +28,7 @@ namespace pw.Testing
 
             var sut = PasswordStrengthEvaluatorFactory.Create(10, model);
 
-            return sut.Calculate(password);
+            return Math.Round(sut.Calculate(password), 15);
         }
     }
 }
