@@ -19,7 +19,7 @@ namespace pw.Evaluation
         internal double Calculate(string password)
         {
             var probability = _model.CalculateProbability(password);
-            var index = _a.BinarySearch(probability, DescendingComparer.Instance);
+            var index = _a.BinarySearch(probability);
             return _c[index - 1];
         }
     }

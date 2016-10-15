@@ -15,9 +15,8 @@ namespace pw.Generation
                 var sampleProbability = model.CalculateProbability(samplePassword);
                 t.Add(sampleProbability);
             }
-            t.Sort(DescendingComparer.Instance);
 
-            var a = new SearchableList<double>(t);
+            var a = new SearchableList<double>(t, DescendingComparer.Instance);
 
             var c = new List<double>(n);
             for (var i = 0; i < n; ++i)

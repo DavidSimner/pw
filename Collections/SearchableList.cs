@@ -5,17 +5,21 @@ namespace pw.Collections
     internal class SearchableList<T>
     {
         private readonly List<T> _list;
+        private readonly IComparer<T> _comparer;
 
-        internal SearchableList(List<T> list)
+        internal SearchableList(List<T> list, IComparer<T> comparer)
         {
+            list.Sort(comparer);
+
             _list = list;
+            _comparer = comparer;
         }
 
         internal T this[int index] => _list[index];
 
-        internal int BinarySearch(T item, IComparer<T> comparer)
+        internal int BinarySearch(T item)
         {
-            return _list.BinarySearch(item, comparer);
+            return _list.BinarySearch(item, _comparer);
         }
     }
 }
