@@ -8,8 +8,7 @@ namespace pw.Generation
     {
         internal static PasswordStrengthEvaluator Create(int n, IProbabilisticPasswordModel model)
         {
-            var t = new List<double>(n + 1);
-            t.Add(double.MaxValue);
+            var t = new List<double>(n + 1) {double.MaxValue};
             for (var i = 1; i <= n; ++i)
             {
                 var samplePassword = model.GenerateSamplePassword();
@@ -19,8 +18,7 @@ namespace pw.Generation
 
             var a = new SearchableList<double>(t, DescendingComparer.Instance);
 
-            var c = new List<double>(n + 1);
-            c.Add(0);
+            var c = new List<double>(n + 1) {0};
             for (var i = 1; i <= n; ++i)
             {
                 c.Add(c[i - 1] + 1 / (n * a[i]));
