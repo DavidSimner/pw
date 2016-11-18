@@ -16,7 +16,7 @@ namespace pw.Generation
                 t.Add(sampleProbability);
             }
 
-            var a = new SearchableList<double>(t, DescendingComparer.Instance);
+            var a = new SearchableList<double>(t, DescendingComparer<double>.Instance);
 
             var c = new List<double>(n + 1) {0};
             for (var i = 1; i <= n; ++i)

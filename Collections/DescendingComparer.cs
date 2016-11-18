@@ -1,12 +1,14 @@
+using System;
 using System.Collections.Generic;
 
 namespace pw.Collections
 {
-    internal class DescendingComparer : IComparer<double>
+    internal class DescendingComparer<T> : IComparer<T>
+        where T : IComparable<T>
     {
-        internal static readonly IComparer<double> Instance = new DescendingComparer();
+        internal static readonly IComparer<T> Instance = new DescendingComparer<T>();
 
-        int IComparer<double>.Compare(double x, double y)
+        int IComparer<T>.Compare(T x, T y)
         {
             return y.CompareTo(x);
         }
