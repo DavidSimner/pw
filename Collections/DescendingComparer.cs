@@ -6,7 +6,7 @@ namespace pw.Collections
     {
         internal static readonly IComparer<double> Instance = new DescendingComparer();
 
-        public int Compare(double x, double y)
+        int IComparer<double>.Compare(double x, double y)
         {
             return y.CompareTo(x);
         }
